@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h4>
+        see console
+    </h4>
+    <script>
+        let rows = prompt('Enter the number of rows:');
+        let cols = prompt('Enter the number of columns:');
+
+        // Convert input strings to numbers
+        rows = parseInt(rows);
+        cols = parseInt(cols);
+
+        // Create the table
+        for (let i = 1; i <= rows; i++) {
+            let row = '';
+            for (let j = 1; j <= cols; j++) {
+                row += (i * j) + '\t';
+            }
+            console.log(row);
+        }
+
+    </script>
+</body>
+
+</html>
