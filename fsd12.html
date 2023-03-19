@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Small Business Website</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Set hero section height to fill the screen */
+      .content-section {
+        padding-top: 80px;
+      }
+
+      .hero {
+        height: calc(100vh - 56px);
+        display: flex;
+        align-items: center;
+        background-image: url("https://via.placeholder.com/1920x1080");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .hero h1 {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+      }
+
+      .hero p {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .services {
+        padding: 3rem 0;
+      }
+
+      .services h2 {
+        margin-bottom: 2rem;
+      }
+
+      .card {
+        margin-bottom: 2rem;
+        border-radius: 0;
+      }
+
+      footer {
+        background-color: #f8f9fa;
+        padding: 2rem 0;
+      }
+
+      footer p {
+        margin: 0;
+        text-align: center;
+      }
+
+      /* Small devices (phones) */
+      @media only screen and (max-width: 767px) {
+        .content-section {
+          padding-top: 60px;
+        }
+        .services-section .service {
+          margin-bottom: 30px;
+        }
+        .testimonials-section .testimonial {
+          margin-bottom: 20px;
+        }
+      }
+
+      /* Medium devices (tablets) */
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
+        .content-section {
+          padding-top: 70px;
+        }
+        .services-section .service {
+          margin-bottom: 40px;
+        }
+      }
+
+      /* Large devices (desktops) */
+      @media only screen and (min-width: 992px) {
+        .content-section {
+          padding-top: 80px;
+        }
+      }
+
+      .testimonials-section {
+        background-color: #f8f8f8;
+        padding: 50px 0;
+      }
+
+      .testimonial {
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      .testimonial img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+      }
+
+      .testimonial blockquote {
+        font-size: 18px;
+        font-weight: 400;
+        margin-bottom: 20px;
+        color: #666;
+      }
+
+      .testimonial .author {
+        font-size: 16px;
+        font-weight: 600;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-light fixed-top"
+      style="background-color: darkgrey"
+    >
+      <a class="navbar-brand" href="#">Small Business</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="hero">
+      <div class="container">
+        <h1>Welcome to Small Business</h1>
+        <p>
+          We offer high-quality services to meet all of your business needs.
+        </p>
+        <a class="btn btn-primary btn-lg" href="#">Learn More</a>
+      </div>
+    </div>
+    <div class="services">
+      <div class="container">
+        <h2>Our Services</h2>
+        <div class="row">
+          <div class="col-sm-6 col-lg-4">
+            <div class="card">
+              <img
+                class="card-img-top"
+                src="https://via.placeholder.com/300x200"
+                alt="Service 1"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Service 1</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+                <a href="#" class="btn btn-primary">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4">
+            <div class="card">
+              <img
+                class="card-img-top"
+                src="https://via.placeholder.com/300x200"
+                alt="Service 2"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Service 2</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+                <a href="#" class="btn btn-primary">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4">
+            <div class="card">
+              <img
+                class="card-img-top"
+                src="https://via.placeholder.com/300x200"
+                alt="Service 3"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Service 3</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+                <a href="#" class="btn btn-primary">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="testimonials-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2>Customer Testimonials</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="testimonial">
+              <img
+                class="card-img-top"
+                src="https://via.placeholder.com/200x200"
+                alt="Testimonial 1"
+              />
+              <blockquote>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+                vitae eleifend sapien, a blandit sapien. Nulla facilisi.
+              </blockquote>
+              <p class="author">- John Doe</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="testimonial">
+              <img
+                class="card-img-top"
+                src="https://via.placeholder.com/200x200"
+                alt="Testimonial 2"
+              />
+              <blockquote>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+                vitae eleifend sapien, a blandit sapien. Nulla facilisi.
+              </blockquote>
+              <p class="author">- Jane Doe</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="testimonial">
+              <img
+                class="card-img-top"
+                src="https://via.placeholder.com/200x200"
+                alt="Testimonial 3"
+              />
+              <blockquote>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+                vitae eleifend sapien, a blandit sapien. Nulla facilisi.
+              </blockquote>
+              <p class="author">- Bob Smith</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2023 Small Business. All Rights Reserved.</p>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Stack Example</title>
+  </head>
+  <body>
+    <h1>Stack Example</h1>
+    <button onclick="pushElement()">Push Element</button>
+    <button onclick="popElement()">Pop Element</button>
+    <div id="stack"></div>
+    <script>
+      class Stack {
+        constructor() {
+          this.stack = [];
+          this.length = 10;
+        }
+
+        push(element) {
+          if (this.stack.length < this.length) {
+            this.stack.push(element);
+          } else {
+            alert("Stack Overflow");
+          }
+        }
+
+        pop() {
+          if (this.stack.length === 0) {
+            alert("Stack Underflow");
+          } else {
+            console.log(this.stack.pop());
+          }
+        }
+
+        display() {
+          let stackHtml = "";
+          for (let i = this.stack.length - 1; i >= 0; i--) {
+            stackHtml += `<div>${this.stack[i]}</div>`;
+          }
+          document.getElementById("stack").innerHTML = stackHtml;
+        }
+      }
+
+      const stack = new Stack();
+
+      function pushElement() {
+        const element = prompt(`Enter the element to push to stack: `);
+        stack.push(element);
+        stack.display();
+      }
+
+      function popElement() {
+        stack.pop();
+        stack.display();
+      }
+
+      stack.display();
+    </script>
+  </body>
+</html>
