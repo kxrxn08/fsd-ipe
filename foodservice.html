@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      li {
+        position: relative;
+        width: 200px;
+        height: 250px;
+        margin: 10px;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .details {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.5s ease-in-out;
+      }
+
+      li:hover .details {
+        visibility: visible;
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>
+        <img src="kakashi (2).jpg" />
+        <div class="details">
+          <h3>Food Item 1</h3>
+          <p>Price: $10</p>
+        </div>
+      </li>
+      <li>
+        <img src="kakashi.jpg" />
+        <div class="details">
+          <h3>Food Item 2</h3>
+          <p>Price: $15</p>
+        </div>
+      </li>
+      <li>
+        <img src="WallpaperDog-17089144.jpg" />
+        <div class="details">
+          <h3>Food Item 3</h3>
+          <p>Price: $12</p>
+        </div>
+      </li>
+    </ul>
+  </body>
+</html>
