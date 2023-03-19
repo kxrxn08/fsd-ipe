@@ -8,40 +8,50 @@
     <title>Document</title>
     <style>
         div {
-            animation: move 5s infinite linear normal;
+            position: relative;
+            animation-name: meet;
+            animation-duration: 4s;
+            animation-iteration-count: infinite
         }
 
-        @keyframes move {
-
-            0%,
-            100% {
-                transform: translateX(0px);
+        @keyframes meet {
+            0% {
+                left: 0;
+                top: 0;
             }
 
             25% {
-                transform: translateX(65%)
+                left: 85vw;
+                top: 0;
             }
 
             50% {
-                transform: translateX(65%) translateY(85%);
+                left: 85vw;
+                top: 75vh;
             }
 
             75% {
-                transform: translate(65%, 0%);
+                left: 0;
+                top: 75vh;
+            }
+
+            100% {
+                left: 0;
+                top: 0;
             }
         }
     </style>
 </head>
 
-<body style="height:100vh;">
-    <div height="100%" width="100%">
-        <svg height="300" width="400" style="border:2px solid black">
-            <rect x="20" y="20" width="200" height="40" fill=rgb(255,0,0) stroke-width="2" stroke="rgb(0,0,0)" />
-            <rect x="20" y="61" width="300" height="130" fill=rgb(0,0,255) stroke-width="2" stroke="rgb(0,0,0)" />
-            <circle cx="100" cy="200" r="40" stroke="black" stroke-width="3" fill="red" />
-            <circle cx="100" cy="200" r="10" stroke="black" stroke-width="3" fill="blue" />
-            <circle cx="240" cy="200" r="40" stroke="black" stroke-width="3" fill="red" />
-            <circle cx="240" cy="200" r="10" stroke="black" stroke-width="3" fill="blue" />
+<body>
+    <div>
+        <svg width="200" height="200">
+            <rect x="0" y="20" width="150" height="100" fill="red" stroke-width="2" stroke="black" />
+            <rect x="0" y="40" width="200" height="100" fill="blue" stroke-width="2" stroke="black" />
+            <circle cx="30" cy="140" r="20" fill="red" stroke-width="2" stroke="black" />
+            <circle cx="170" cy="140" r="20" fill="red" stroke-width="2" stroke="black" />
+            <circle cx="30" cy="140" r="10" fill="blue" stroke-width="2" stroke="black" />
+            <circle cx="170" cy="140" r="10" fill="blue" stroke-width="2" stroke="black" />
         </svg>
     </div>
 </body>
