@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ES6 Arrays Test</title>
+  </head>
+  <body>
+    <h1>ES6 Arrays Test</h1>
+
+    <script>
+      //Defining arrays
+      const array1 = [1, 4, 6, 8, 10];
+      const array2 = [2, 5, 7, 9, 12];
+
+      //Arrow function to merge both arrays
+      const mergeArrays = (arr1, arr2) => [...arr1, ...arr2];
+
+      //Finding second maximum from both arrays without sorting
+      const findSecondMax = (arr1, arr2) => {
+        const mergedArray = mergeArrays(arr1, arr2);
+        const max = Math.max(...mergedArray);
+        return Math.max(...mergedArray.filter((num) => num < max));
+      };
+
+      //Finding summation of both individual arrays
+      const findSummation = (arr1, arr2) => [
+        arr1.reduce((a, b) => a + b, 0),
+        arr2.reduce((a, b) => a + b, 0),
+      ];
+
+      //Calling functions and printing output
+      const mergedArray = mergeArrays(array1, array2);
+      document.write(mergedArray, "<br>");
+
+      const secondMax = findSecondMax(array1, array2);
+      document.write(secondMax, "<br>");
+
+      const summation = findSummation(array1, array2);
+      document.write(summation, "<br>");
+    </script>
+  </body>
+</html>

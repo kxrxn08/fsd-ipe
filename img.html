@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login Page</title>
+    <style>
+      body {
+        background-image: url("background-image.jpg");
+        background-size: cover;
+      }
+      img {
+        margin-left: 100px;
+        height: 200px;
+        width: 200px;
+        filter: blur(5px);
+      }
+      img:hover {
+        visibility: visible;
+        filter: blur(0px);
+      }
+      form {
+        width: 400px;
+        margin: auto;
+        margin-top: 50px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: white;
+      }
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: none;
+        border-bottom: 1px solid #ccc;
+      }
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <img src="kakashi (2).jpg" alt="" srcset="" />
+      <h2>Login</h2>
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required />
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required />
+      <input type="submit" value="Submit" />
+      <span class="error" id="error-message"></span>
+    </form>
+    <script>
+      const form = document.querySelector("form");
+      const errorMessage = document.querySelector("#error-message");
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const username = form.elements.username.value;
+        const password = form.elements.password.value;
+
+        if (username === "admin" && password === "password") {
+          window.alert("Login successful!");
+        } else {
+          errorMessage.textContent = "Invalid username or password";
+        }
+      });
+    </script>
+  </body>
+</html>
