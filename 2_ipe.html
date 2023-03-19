@@ -1,21 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Table 1</title>
+    <style>
+        table {
+            width: 40%;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        td{
+            padding: 2px;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .grey {
+            background-color: rgb(228, 228, 228);
+        }
+
+        #first-row:hover{
+            background-color: red;
+        }
+
+        .cyan-row:hover{
+            background-color: cyan;
+        }
+
+
+    </style>
 </head>
+
 <body>
-    <table>
-        <tr>
-            <td colspan="3">invoice #123456789</td>
+    <table border="1px solid black">
+        <caption>A comlex table</caption>
+        <tr id="first-row" class="grey bold">
+            <td colspan="3">Invoice #123456789</td>
             <td>14 January 2025</td>
         </tr>
         <tr>
-            <td>Pay to:<br>acme billing co.<br>
-            </td>
+            <td colspan="2">Pay to:<br />Acme Billing Co.<br />123 Main St.<br />Cityville,NA 12345</td>
+            <td colspan="2">Customer:<br />John Smith<br />321 Willow Way<br />Southest Northwestershine,MA 54321</td>
+        </tr>
+        <tr class="grey bold">
+            <td style="width: 25%;">Name/Description</td>
+            <td style="width: 25%;">Qty.</td>
+            <td style="width: 25%;">@</td>
+            <td style="width: 25%;">Cost</td>
+        </tr>
+        <tr class="cyan-row">
+            <td onclick="turnBlue(this)">Paperclips</td>
+            <td onclick="turnBlue(this)">1000</td>
+            <td onclick="turnBlue(this)">0.01</td>
+            <td onclick="turnBlue(this)">10.00</td>
+        </tr>
+        <tr class="cyan-row">
+            <td onclick="turnBlue(this)">Staples (box)</td>
+            <td onclick="turnBlue(this)">100</td>
+            <td onclick="turnBlue(this)">1.00</td>
+            <td onclick="turnBlue(this)">100.00</td>
+        </tr>
+        <tr>
+            <td class="grey bold" colspan="3">Subtotal</td>
+            <td>110.00</td>
+        </tr>
+        <tr>
+            <td class="grey bold" colspan="2">Tax</td>
+            <td>8%</td>
+            <td>8.80</td>
+        </tr>
+        <tr>
+            <td class="grey bold" colspan="3">Grand Total</td>
+            <td>$118.80</td>
         </tr>
     </table>
+
+    <script>
+        function turnBlue(elem){
+            elem.style.color = 'blue';
+        }
+    </script>
+
 </body>
+
 </html>
