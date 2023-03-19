@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    .bl {
+      color: black;
+    }
+
+    td.clicked {
+      color: blue;
+    }
+
+    .fst:hover {
+      background-color: red !important;
+    }
+
+    th {
+      /* background-color: rgb(226, 225, 225); */
+    }
+
+    .gra {
+      background-color: rgb(226, 225, 225);
+    }
+
+    .fth:hover {
+      background-color: cyan;
+    }
+  </style>
+</head>
+
+<body>
+  <table border="1" rules="all">
+    <thead>
+      <tr class="fst gra">
+        <th colspan="3" align="left">Invoice #123456789</th>
+        <th>14 January 2025</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="bl" colspan="2">
+          <b> Pay to: </b>
+          <br />
+          Acme Billing Co.
+          <br />
+          123 Main St. <br />
+          Cityville. NA 12345
+        </td>
+        <td class="bl" colspan="2">
+          <b> Customer: </b><br />
+          John Smith
+          <br />
+          321 Willow Way
+          <br />
+          Southeast Northwestershire, MA 54321
+        </td>
+      </tr>
+      <tr>
+        <th class="gra">Name/Description</th>
+        <th class="gra">Qty.</th>
+        <th class="gra">@</th>
+        <th class="gra">Cost</th>
+      </tr>
+      <tr class="fth">
+        <td class="bl">Paperclips</td>
+        <td class="bl">1000</td>
+        <td class="bl">0.01</td>
+        <td class="bl">10.00</td>
+      </tr>
+      <tr class="fth">
+        <td class="bl">Staples(box)</td>
+        <td class="bl">100</td>
+        <td class="bl">1.00</td>
+        <td class="bl">100.00</td>
+      </tr>
+      <tr>
+        <th class="gra" align="left" colspan="3">Subtotal</th>
+        <!-- <td>Row 5, Column 2</td> -->
+        <td class="bl">110.00</td>
+      </tr>
+      <tr>
+        <th class="gra" align="left" colspan="2">Tax</th>
+        <td class="bl">8%</td>
+        <td class="bl">8.80</td>
+      </tr>
+      <tr>
+        <th class="gra" align="left" colspan="3">Grand Total</th>
+        <td class="bl">$ 118.80</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    const tds = document.querySelectorAll("td");
+    for (let td of tds) {
+      td.addEventListener("click", function () {
+        this.classList.toggle("clicked");
+      });
+    }
+  </script>
+</body>
+
+</html>

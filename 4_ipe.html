@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Form</title>
+	<script type="text/javascript">
+		
+		function validateForm() {
+			var fname = document.forms["registrationForm"]["fname"].value;
+			var lname = document.forms["registrationForm"]["lname"].value;
+			var dob = document.forms["registrationForm"]["dob"].value;
+			var mobile = document.forms["registrationForm"]["mobile"].value;
+			var gender = document.forms["registrationForm"]["gender"].value;
+			var address = document.forms["registrationForm"]["address"].value;
+			var city = document.forms["registrationForm"]["city"].value;
+			var pincode = document.forms["registrationForm"]["pincode"].value;
+			var email = document.forms["registrationForm"]["email"].value;
+			var state = document.forms["registrationForm"]["state"].value;
+			var country = document.forms["registrationForm"]["country"].value;
+			var hobby = document.forms["registrationForm"]["hobby"].value;
+			var board = document.forms["registrationForm"]["board"].value;
+			var percentage = document.forms["registrationForm"]["percentage"].value;
+			var passing_year = document.forms["registrationForm"]["passing_year"].value;
+
+			if (fname == "" || lname == "" || dob == "" || mobile == "" || gender == "" || address == "" || city == "" || pincode == "" || email == "" || state == "" || country == "" || hobby == "" || board == "" || percentage == "" || passing_year == "") {
+				alert("All fields must be filled out");
+				return false;
+			}
+			else if (fname.length > 20 || lname.length > 20) {
+				alert("First name and last name should not exceed 20 characters");
+				return false;
+			}
+			else if (!validateEmail(email)) {
+				alert("Invalid email address");
+				return false;
+			}
+			else {
+				return true;
+			}
+		}
+
+		function validateEmail(email) {
+			var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            // or /\S+@\S+\.\S+/
+			return re.test(email);
+		}
+
+		function resetForm() {
+			document.getElementById("registrationForm").reset();
+		}
+
+	</script>
+</head>
+<body>
+	<form name="registrationForm" onsubmit="return validateForm()">
+		<h2>Registration Form</h2>
+		<label for="fname">First Name:</label>
+		<input type="text" id="fname" name="fname" maxlength="20"><br><br>
+		<label for="lname">Last Name:</label>
+		<input type="text" id="lname" name="lname" maxlength="20"><br><br>
+		<label for="dob">Date of Birth:</label>
+		<input type="date" id="dob" name="dob"><br><br>
+		<label for="mobile">Mobile Number:</label>
+		<input type="text" id="mobile" name="mobile"><br><br>
+		<label for="gender">Gender:</label>
+		<input type="radio" id="male" name="gender" value="Male">
+		<label for="male">Male</label>
+		<input type="radio" id="female" name="gender" value="Female">
+		<label for="female">Female</label><br><br>
+		<label for="address">Address:</label>
+		<textarea id="address" name="address"></textarea><br><br>
+		<label for="city">City:</label>
+		<input type="text" id="city" name="city"><br><br>
+		<label for="pincode">Pincode:</label>
+		<input type="text" id="pincode" name="pincode"><br><br>
+		<label for="email">Email ID:</label>
+		<input type="text" id="email" name="email"><br><br>
+		<label for="state">State:</label>
+		<input type="text" id="state" name="state"><br><br>
+		<label for="country">Country:</label>
+		<input type="text" id="country" name="country"><br><br>
+		<label for="hobby">Hobbies:</label>
+		<input type="checkbox" id="reading" name="hobby" value="Reading">
+		<label for="reading">Reading</label>
+		<input type="checkbox" id="music" name="hobby" value="Music">
+		<label for="music">Music</label>
+		<input type="checkbox" id="sports" name="hobby" value="Sports">
+		<label for="sports">Sports</label><br><br>
+		<h3>Qualification</h3>
+		<table>
+			<thead>
+				<tr>
+					<th>SR. No.</th>
+					<th>Board/University</th>
+					<th>Percentage/CGPA</th>
+					<th>Passing Year</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td><input type="text" name="board"></td>
+					<td><input type="text" name="percentage"></td>
+					<td><input type="text" name="passing_year"></td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td><input type="text" name="board"></td>
+					<td><input type="text" name="percentage"></td>
+					<td><input type="text" name="passing_year"></td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td><input type="text" name="board"></td>
+					<td><input type="text" name="percentage"></td>
+					<td><input type="text" name="passing_year"></td>
+				</tr>
+			</tbody>
+		</table><br><br>
+		<label for="course">Course Applied:</label>
+		<select id="course" name="course">
+			<option value="B.Tech">B.Tech</option>
+			<option value="B.Sc">B.Sc</option>
+			<option value="B.Com">B.Com</option>
+			<option value="BBA">BBA</option>
+		</select><br><br>
+		<input type="submit" value="Submit">
+		<input type="button" value="Reset" onclick="resetForm()">
+	</form>
+</body>
+</html>
