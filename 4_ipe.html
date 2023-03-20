@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Registration Form</title>
 	<script type="text/javascript">
-		
+
 		function validateForm() {
 			var fname = document.forms["registrationForm"]["fname"].value;
 			var lname = document.forms["registrationForm"]["lname"].value;
@@ -21,26 +22,94 @@
 			var percentage = document.forms["registrationForm"]["percentage"].value;
 			var passing_year = document.forms["registrationForm"]["passing_year"].value;
 
-			if (fname == "" || lname == "" || dob == "" || mobile == "" || gender == "" || address == "" || city == "" || pincode == "" || email == "" || state == "" || country == "" || hobby == "" || board == "" || percentage == "" || passing_year == "") {
-				alert("All fields must be filled out");
+			if (fname == "") {
+				alert("Please enter your first name");
 				return false;
 			}
+
+			if (lname == "") {
+				alert("Please enter your last name");
+				return false;
+			}
+
+			if (dob == "") {
+				alert("Please enter your date of birth");
+				return false;
+			}
+
+			if (mobile == "") {
+				alert("Please enter your mobile number");
+				return false;
+			}
+
+			if (gender == "") {
+				alert("Please select your gender");
+				return false;
+			}
+
+			if (address == "") {
+				alert("Please enter your address");
+				return false;
+			}
+
+			if (city == "") {
+				alert("Please enter your city");
+				return false;
+			}
+
+			if (pincode == "") {
+				alert("Please enter your postal code");
+				return false;
+			}
+
+			if (email == "") {
+				alert("Please enter your email address");
+				return false;
+			}
+
+			if (state == "") {
+				alert("Please enter your state/province/region");
+				return false;
+			}
+
+			if (country == "") {
+				alert("Please enter your country");
+				return false;
+			}
+
+			
+
+			if (board == "") {
+				alert("Please enter your educational board");
+				return false;
+			}
+
+			if (percentage == "") {
+				alert("Please enter your academic percentage");
+				return false;
+			}
+
+			if (passing_year == "") {
+				alert("Please enter your year of passing");
+				return false;
+			}
+
 			else if (fname.length > 20 || lname.length > 20) {
-				alert("First name and last name should not exceed 20 characters");
-				return false;
-			}
-			else if (!validateEmail(email)) {
-				alert("Invalid email address");
-				return false;
-			}
-			else {
-				return true;
-			}
+			alert("First name and last name should not exceed 20 characters");
+			return false;
+		}
+		else if (!validateEmail(email)) {
+			alert("Invalid email address");
+			return false;
+		}
+		else {
+			return true;
+		}
 		}
 
 		function validateEmail(email) {
 			var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-            // or /\S+@\S+\.\S+/
+			// or /\S+@\S+\.\S+/
 			return re.test(email);
 		}
 
@@ -50,6 +119,7 @@
 
 	</script>
 </head>
+
 <body>
 	<form name="registrationForm" onsubmit="return validateForm()">
 		<h2>Registration Form</h2>
@@ -78,13 +148,7 @@
 		<input type="text" id="state" name="state"><br><br>
 		<label for="country">Country:</label>
 		<input type="text" id="country" name="country"><br><br>
-		<label for="hobby">Hobbies:</label>
-		<input type="checkbox" id="reading" name="hobby" value="Reading">
-		<label for="reading">Reading</label>
-		<input type="checkbox" id="music" name="hobby" value="Music">
-		<label for="music">Music</label>
-		<input type="checkbox" id="sports" name="hobby" value="Sports">
-		<label for="sports">Sports</label><br><br>
+
 		<h3>Qualification</h3>
 		<table>
 			<thead>
@@ -127,4 +191,5 @@
 		<input type="button" value="Reset" onclick="resetForm()">
 	</form>
 </body>
+
 </html>

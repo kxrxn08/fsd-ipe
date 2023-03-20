@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ball {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: red;
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: zigzag 5s linear infinite;
+        }
+
+        @keyframes zigzag {
+            0% {
+                top: 0;
+                left: 0;
+            }
+
+            25% {
+                top: 0vh;
+                left: 85vw;
+                background-color: yellow;
+            }
+
+            50% {
+                top: 85vh;
+                left: 0;
+                background-color: green;
+            }
+
+            75% {
+                top: 85vh;
+                left: 85vw;
+                background-color: blue;
+            }
+
+            100% {
+                top: 0;
+                left: 0;
+                background-color: red;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ball"></div>
+</body>
+
+</html>

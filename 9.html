@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script language="JavaScript">
+        function toggle(source) {
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i] != source)
+                    checkboxes[i].checked = source.checked;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <input type="checkbox" onClick="toggle(this)" /> Toggle All<br />
+
+    <input type="checkbox" name="foo" value="bar1"> Bar 1<br />
+    <input type="checkbox" name="foo" value="bar2"> Bar 2<br />
+    <input type="checkbox" name="foo" value="bar3"> Bar 3<br />
+    <input type="checkbox" name="foo" value="bar4"> Bar 4<br />
+</body>
+
+</html>

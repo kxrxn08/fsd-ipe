@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Form Validation Example</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>Form Validation Example</h1>
+	<form id="myForm" method="POST" onsubmit="return check()">
+		<div>
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="name" required>
+			<span id="nameError" class="error"></span>
+		</div>
+		<div>
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email" required>
+			<span id="emailError" class="error"></span>
+		</div>
+		<div>
+			<label for="phone">Phone:</label>
+			<input type="text" id="phone" name="phone" required>
+			<span id="phoneError" class="error"></span>
+		</div>
+		<div>
+			<label for="message">Message:</label>
+			<textarea id="message" name="message" required></textarea>
+			<span id="messageError" class="error"></span>
+		</div>
+		<input type="submit" value="Submit">
+	</form>
+	<script src="js.js"></script>
+</body>
+</html>

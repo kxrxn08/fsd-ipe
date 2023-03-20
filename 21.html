@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <!-- <script src="script.js"></script> -->
+    <style>
+        /* Reset styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Global styles */
+        body {
+            font-family: sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            height: 60px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            padding: 0 20px;
+        }
+
+        .logo a {
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none;
+            height: 100%;
+        }
+
+        .nav-links li a {
+            display: block;
+            padding: 0 10px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .burger {
+            display: none;
+        }
+
+        .burger div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .slider {
+            max-width: 100%;
+            overflow: hidden;
+            position: relative;
+            height: 500px;
+        }
+
+        .slider img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .signup {
+            max-width: 500px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .signup h2 {
+            margin-bottom: 20px;
+        }
+
+        .signup label {
+            display: block;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .signup input[type="text"],
+        .signup input[type="email"],
+        .signup input[type="tel"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .signup input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media screen and (max-width: 991px) {
+            .nav-links {
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-evenly;
+                height: 300px;
+                background-color: #333;
+                z-index: 1;
+                transform: scaleY(0);
+                transition: transform 0.3s ease-in-out;
+            }
+
+            .nav-links li {
+                opacity: 0;
+            }
+
+            .burger {
+                display: block;
+            }
+
+            .burger:hover {
+                cursor: pointer;
+            }
+
+            .burger div {
+                background-color: #fff;
+            }
+
+            .nav-active {
+                transform: scaleY(1);
+            }
+
+            .nav-active li {
+                opacity: 1;
+                transition: opacity 0.3s ease-in-out;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#">Book Store</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">New Arrivals</a></li>
+                <li><a href="#">Fiction</a></li>
+                <li><a href="#">Non-Fiction</a></li>
+                <li><a href="#">Best Sellers</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Sign In</a></li>
+                <li class="burger">
+                    <a href="#" onclick="toggleMenu()">
+                        <div class="line1"></div>
+                        <div class="line2"></div>
+                        <div class="line3"></div>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="slider">
+            <img src="slide1.jpg" alt="Slide 1">
+            <img src="slide2.jpg" alt="Slide 2">
+            <img src="slide3.jpg" alt="Slide 3">
+            <img src="slide4.jpg" alt="Slide 4">
+        </div>
+        <section class="signup">
+            <h2>Sign Up</h2>
+            <form onsubmit="return validateForm()">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+                <input type="submit" value="Sign Up">
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Book Store. All rights reserved.</p>
+    </footer>
+</body>
+<script>
+    function toggleMenu() {
+        var menu = document.querySelector('.nav-links');
+        menu.classList.toggle('nav-active');
+
+        var burger = document.querySelector('.burger');
+        burger.classList.toggle('toggle');
+    }
+
+    function validateForm() {
+        var username = document.forms[0]["username"].value;
+        var email = document.forms[0]["email"].value;
+        var phone = document.forms[0]["phone"].value;
+
+        if (!/^[a-zA-Z]+$/.test(username)) {
+            alert("Username can only contain letters.");
+            return false;
+        }
+        if (!/\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/.test(email)) {
+            alert("Please enter a valid email address.");
+            return false;
+        }
+
+        if (!/^\d{10}$/.test(phone)) {
+            alert("Please enter a 10-digit phone number.");
+            return false;
+        }
+
+        return true;
+    }
+
+</script>
+
+</html>

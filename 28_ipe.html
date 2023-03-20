@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <style>
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+
+        .error {
+            border: 1px solid red;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Registration Form</h1>
+    <form id="registration-form">
+        <label for="name-input">Name:</label>
+        <input type="text" id="name-input" name="name" required>
+
+        <div class="error-message" id="name-error"></div>
+        <label for="email-input">Email:</label>
+        <input type="email" id="email-input" name="email" required>
+        <div class="error-message" id="email-error"></div>
+        <label for="phone-input">Phone Number:</label>
+        <input type="tel" id="phone-input" name="phone" required>
+        <div class="error-message" id="phone-error"></div>
+        <label for="password-input">Password:</label>
+        <input type="password" id="password-input" name="password" required>
+        <div class="error-message" id="password-error"></div>
+        <label for="confirm-password-input">Confirm Password:</label>
+        <input type="password" id="confirm-password-input" name="confirm-password" required>
+        <div class="error-message" id="confirm-password-error"></div>
+        <button type="submit">Register</button>
+    </form>
+</body>
+<script>
+    // Input validation regex patterns
+    // Input validation regex patterns
+    const nameRegex = /^[A-Za-z\s]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneRegex = /^\d{10}$/;
+    const passwordRegex = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+    // Input elements
+    const nameInput = document.getElementById('name-input');
+    const emailInput = document.getElementById('email-input');
+    const phoneInput = document.getElementById('phone-input');
+    const passwordInput = document.getElementById('password-input');
+    const confirmPasswordInput = document.getElementById('confirm-password-input');
+    // Error message elements
+    const nameError = document.getElementById('name-error');
+    const emailError = document.getElementById('email-error');
+    const phoneError = document.getElementById('phone-error');
+    const passwordError = document.getElementById('password-error');
+    const confirmPasswordError = document.getElementById('confirm-password-error');
+    // Event listeners for input validation
+    nameInput.addEventListener('input', function () {
+        validateInput(nameInput, nameError, nameRegex, 'Name should contain only letters and spaces.');
+    });
+    emailInput.addEventListener('input', function () {
+        validateInput(emailInput, emailError, emailRegex, 'Invalid email address.');
+    });
+    phoneInput.addEventListener('input', function () {
+        validateInput(phoneInput, phoneError, phoneRegex, 'Phone number should be 10 digits.');
+
+    });
+    passwordInput.addEventListener('input', function () {
+        validateInput(passwordInput, passwordError, passwordRegex, 'Password should contain at least 8 characters,` 
+including numbers and symbols)
+        validateConfirmPassword(confirmPasswordInput, passwordInput, confirmPasswordError, 'Passwords do not 
+match.');
+});
+    confirmPasswordInput.addEventListener('input', function () {
+        validateConfirmPassword(confirmPasswordInput, passwordInput, confirmPasswordError, 'Passwords do not 
+match.');
+});
+    // Input validation function
+    function validateInput(input, error, regex, message) {
+        if (!regex.test(input.value)) {
+            error.innerHTML = message;
+            input.classList.add('error');
+        } else {
+            error.innerHTML = '';
+            input.classList.remove('error');
+        }
+    }
+    // Confirm password validation function
+    function validateConfirmPassword(confirmInput, originalInput, error, message) {
+        if (confirmInput.value !== originalInput.value) {
+            error.innerHTML = message;
+            confirmInput.classList.add('error');
+        } else {
+            error.innerHTML = '';
+            confirmInput.classList.remove('error');
+        }
+    }
+    // Form validation function
+    function validateForm() {
+        let valid = true;
+        validateInput(nameInput, nameError, nameRegex, 'Name should contain only letters and spaces.');
+        validateInput(emailInput, emailError, emailRegex, 'Invalid email address.');
+        validateInput(phoneInput, phoneError, phoneRegex, 'Phone number should be 10 digits.');
+        validateInput(passwordInput, passwordError, passwordRegex, 'Password should contain at least 8 characters, 
+including numbers and symbols.');
+validateConfirmPassword(confirmPasswordInput, passwordInput, confirmPasswordError, 'Passwords do not 
+match.');
+if (document.querySelectorAll('.error').length > 0) {
+            valid = false;
+        }
+        return valid;
+    }
+
+</script>
+
+</html>
